@@ -153,14 +153,49 @@ footer a:hover {
 }
 
 .project {
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 15px;
+    border: 1px solid #eee;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.project img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project h3, .project h4, .project p {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.project-gif {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
 
-.project:hover {
+.project img:only-of-type {
+    margin-bottom: 0;
+}
+
+.project-gif:hover {
     transform: scale(1.05);
 }
 
