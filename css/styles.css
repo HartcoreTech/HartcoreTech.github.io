@@ -9,12 +9,27 @@ body {
     font-family: Verdana, Tahoma, sans-serif;
 }
 
+header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Align items vertically in the center */
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
 header, footer {
     flex-shrink: 0;
     background-color: #333;
     color: white;
     padding: 1rem;
     text-align: center;
+}
+
+.logo-container img {
+    max-width: 200px;   /* Adjust as needed */
+    height: auto;
+    display: block;
 }
 
 .banner {
