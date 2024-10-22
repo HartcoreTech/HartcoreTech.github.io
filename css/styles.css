@@ -11,11 +11,13 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between; /* Space between logo and nav */
-    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Logo left, nav right */
+    align-items: center;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background for visibility */
     color: white;
+    position: relative; /* Relative positioning */
+    z-index: 10; /* Higher z-index to ensure it appears above other content */
 }
 
 header, footer {
@@ -26,6 +28,10 @@ header, footer {
     text-align: center;
 }
 
+.logo-container {
+    flex: 1;
+}
+
 .logo-container img {
     max-width: 200px;   /* Adjust as needed */
     height: auto;
@@ -33,21 +39,57 @@ header, footer {
 }
 
 .banner {
-    display: flex;
-    justify-content: center;
-    padding: 4px 0;
+    display: flex; /* Align nav links horizontally */
+    gap: 15px;
 }
 
+/* Links styling */
 .banner a {
     color: white;
     text-decoration: none;
-    padding: 6px 12px;
-    transition: background-color 0.3s;
+    padding: 8px 12px;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .banner a:hover {
     background-color: #555;
+}
+
+/* Hamburger button - initially hidden */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Show the hamburger button */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide the banner links initially */
+    .banner {
+        display: none;
+        flex-direction: column; /* Stack links vertically */
+        background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent background for visibility */
+        position: absolute;
+        top: 70px; /* Place below the header */
+        left: 0;
+        right: 0;
+        padding: 10px;
+        text-align: center;
+        z-index: 9; /* Ensure this is below the header but above other content */
+    }
+
+    /* Show the banner when active */
+    .banner.active {
+        display: flex;
+    }
 }
 
 section {
@@ -82,7 +124,8 @@ section p {
     margin: 0px;
     border-radius: 0px;
     flex-grow: 1;
-    position: relative;
+    position: relative; /* Ensure it can be adjusted */
+    z-index: 1; /* Lower z-index so it stays behind the header */
     width: 100%;
     overflow: hidden;
 }
