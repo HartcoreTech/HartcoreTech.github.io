@@ -179,6 +179,11 @@ footer ul {
     gap: 1rem;
 }
 
+footer img {
+    min-height: 10px;
+    max-height: 25px;
+}
+
 footer a {
     color: aqua;
 }
