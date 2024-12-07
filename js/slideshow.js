@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
     let currentIndex = 0;
-    const slideInterval = 5000; // Change slide every 10 seconds
+    const slideInterval = 5000; // Change slide every 5 seconds
 
     function showSlide(index) {
         // Remove active class from the previous slide
